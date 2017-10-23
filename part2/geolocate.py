@@ -42,7 +42,10 @@ def read_file(fname, file_type):
     
     file_inp = open(fname, "r")   
     for line in file_inp.readlines():
-        raw_list.append(line)
+	line1 = line.split(" ")[1:]
+	line_str = ' '.join(line1)
+        raw_list.append(line_str)
+
         l1 = line.replace(',_','_')
         l2 = re.sub(r'\W+', ' ', l1).split(' ')
         
